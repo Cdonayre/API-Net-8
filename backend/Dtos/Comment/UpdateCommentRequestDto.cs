@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace backend.Dtos.Comment
 {
-    public class CreateCommentDto
+    public class UpdateCommentRequestDto
     {
         [Required]
         [MinLength(5, ErrorMessage = "Title must be at least 5 characters long")]
@@ -15,6 +15,6 @@ namespace backend.Dtos.Comment
         [Required]
         [MinLength(5, ErrorMessage = "Title must be at least 5 characters long")]
         [MaxLength(280, ErrorMessage = "Title must be at most 280 characters long")]
-        public string Content { get; set; } =string.Empty;
+        public string Content { get; set; } =string.Empty;        
     }
 }

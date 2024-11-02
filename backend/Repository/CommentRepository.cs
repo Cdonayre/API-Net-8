@@ -6,6 +6,7 @@ using backend.Data;
 using backend.Interfaces;
 using backend.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Microsoft.IdentityModel.Tokens;
 
 namespace backend.Repository
@@ -25,6 +26,18 @@ namespace backend.Repository
             return commentkModel;
         }
 
+        public async Task<Comment?> DeleteAsync(int id)
+        {
+            var commentModel = await _context.Comments.FirstOrDefaultAsync(x => x.Id == id);
+            if (commentModel == null)
+            {
+                return null;
+            }
+            _context.Comments.Remove(commentModel);
+            await _context.SaveChangesAsync();
+            return commentModel;
+        }
+
         public async Task<List<Comment>> GetAllAsync()
         {
             return await _context.Comments.ToListAsync();
@@ -33,6 +46,20 @@ namespace backend.Repository
         public async Task<Comment?> GetByIdAsync(int id)
         {
             return await _context.Comments.FindAsync(id);
+        }
+
+        public async Task<Comment?> UpdateAsync(int id, Comment commentkModel)
+        {
+            var extistingComment = await _context.Comments.FindAsync(id);
+            if (extistingComment == null)
+            {
+                return null;
+
+            }
+            extistingComment.Title = commentkModel.Title;
+            extistingComment.Content = commentkModel.Content;
+            await _context.SaveChangesAsync();
+            return extistingComment;
         }
     }
 }
