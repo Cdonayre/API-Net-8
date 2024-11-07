@@ -146,3 +146,5 @@ D:\PC\Documentos\Programacion\.NET 8\API Net 8\backend\bin\Debug\net8.0\Microsof
 D:\PC\Documentos\Programacion\.NET 8\API Net 8\backend\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\PC\Documentos\Programacion\.NET 8\API Net 8\backend\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\PC\Documentos\Programacion\.NET 8\API Net 8\backend\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\PC\Documentos\Programacion\.NET 8\API Net 8\backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\PC\Documentos\Programacion\.NET 8\API Net 8\backend\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
